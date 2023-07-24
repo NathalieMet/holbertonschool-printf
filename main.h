@@ -13,7 +13,7 @@
  */
 
 typedef struct displayCharacter{
-	char *specifierCharacter
+	char *specifierCharacter;
 	void (*f)();
 }displayCharacter_t;
 

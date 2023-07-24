@@ -33,21 +33,34 @@ int _printf(const char *format, ...)
 
 	while (format != NULL && format[j] != '\0')
 	{
-		i = 0;
 
-		while (i < 4)
-		{
-			if (format[j] == *(variable_type[i].variable_type))
+		if (format[j] == "%")
+			if (format[j] + 1 == "%")
 			{
-				printf("%s", separator);
-				variable_type[i].f(prints_type);
+				_putchar(format[j]);
 			}
-			i++;
+			else
+			{
+				i = 0;
+
+				while (i < 4)
+				{
+					if (format[j] == *(tableau_selection[i].specifierCharacter))
+					{
+						tableau_selection[i].f(prints_type);
+					}
+					i++;
+				}
+			}
+		else
+		{
+			_putchar(format[j]);
 		}
+
 		j++;
 	}
 
 	va_end(prints_type);
-	printf("\n");
+	_putchar("\n");
 
 }
