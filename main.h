@@ -4,14 +4,18 @@
 //structure
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * struct - struct for display specifier character
  *
- * Return: On success 1.
+ *
+ * @specifierCharacter: character for
+ * @f: function for display
  * On error, -1 is returned, and errno is set appropriately.
  */
 
-
+typedef struct displayCharacter{
+	char *specifierCharacter
+	void (*f)();
+}displayCharacter_t;
 
 // prototype
 
