@@ -1,10 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
-
-//structure
-
+#include <stdarg.h>
 /**
- * struct - struct for display specifier character
+ * struct displayCharacter - struct for display specifier character
  *
  *
  * @specifierCharacter: character for
@@ -12,13 +10,18 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 
-typedef struct displayCharacter{
+typedef struct displayCharacter
+{
 	char *specifierCharacter;
-	void (*f)();
-}displayCharacter_t;
+	int (*f)();
+} displayCharacter_t;
 
-// prototype
+
 
 int _printf(const char *format, ...);
+int print_funct_string(va_list prints_type);
+int print_funct_char(va_list prints_type);
+int print_funct_int(va_list arg);
+int _putchar(char c);
 
 #endif /* MAIN_H */

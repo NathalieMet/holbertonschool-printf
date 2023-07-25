@@ -1,68 +1,89 @@
-#include
+#include <stdarg.h>
+#include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * print_funct_string - prints string
+ * @prints_type: The string to print
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: number of characters printed
+ * On error, 0 is returned
  */
 
-void print_funct_string (va_list prints_type)
+int print_funct_string(va_list prints_type)
 
 {
-	char *str = va_arg(args, char*);
+	char *str = va_arg(prints_type, char*);
+	int count = 0;
 
-	if (str == NULL)
+	if (str == 0)
 		return (0);
 
-	_putchar(str);
+	while (*str != '\0')
+	{
+		_putchar(*str);
+		str++;
+		count++;
+	}
+
+	return (count);
+
 }
 
-void print_funct_char (va_list prints_type)
+/**
+ * print_funct_char - prints character
+ * @prints_type: The character to print
+ *
+ * Return: number of characters printed
+ * On error, 0 is returned
+ */
+
+int print_funct_char (va_list prints_type)
 {
 
-			char c = va_arg(args, int);
+	char c = va_arg(prints_type, int);
 
-			_putchar (c);
+	_putchar (c);
+
+	return (1);
+
 }
 
-void print_funct_int(va_list arg)
+/**
+ * print_funct_int - prints integer
+ * @prints_type: The character to print
+ *
+ * Return: number of digits printed
+ * On error, 0 is returned
+ */
+
+int print_funct_int(va_list prints_type)
 {
-	int num = va_arg(arg, int);
-	int i;
+	int num = va_arg(prints_type, int);
+	int i = 0;
 	char tableau_store[10];
+	int count = 0;
 
 	if (num == 0)
-		return ('0');
+		_putchar('0');
 	if (num < 0)
 	{
 		num = -(num);
-		putchar ('-');
+		_putchar ('-');
 	}
 
 	while (num > 0)
 	{
-		tableau_store[i] = num % 10 + '0';
+		tableau_store[i] = num % 10;
 		num /= 10;
 		i++;
 	}
 	while (i > 0)
 	{
-		_putchar(tableau_store[i] - 1);
+		_putchar(tableau_store[i - 1] + '0');
 		i--;
-	}
-
-
-
-	/*while (temp != 0)
-	{
 		count++;
-		temp /= 10;
+
+
 	}
-	for (i = count; i > 0; i--) {
-		int digit = num / pow(10, i);
-		putchar(digit + '0');
-		num %= pow(10, i);
-	}*/
+	return (count);
 }

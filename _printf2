@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <string.h>
 
 /**
  * _printf - Write function that produces output according to
@@ -18,14 +19,15 @@ int _printf(const char *format, ...)
 	va_list prints_type;
 	int i;
 	int j = 0;
+	int count_length = 0;
 
 
-	displayCharacter_t tableau_selection[] = {
+	displayCharacter_t tableau_selection[] =
+	{
 		{"s", print_funct_string},
 		{"c", print_funct_char},
 		{"d", print_funct_int},
 		{"i", print_funct_int}
-
 	};
 
 
@@ -34,10 +36,13 @@ int _printf(const char *format, ...)
 	while (format != NULL && format[j] != '\0')
 	{
 
-		if (format[j] == "%")
-			if (format[j] + 1 == "%")
+
+		if (format[j] == '%')
+		{
+			if (format[j + 1] == '%')
 			{
-				_putchar(format[j]);
+				count_length += _putchar(format[j]);
+				j+=2;
 			}
 			else
 			{
@@ -45,22 +50,26 @@ int _printf(const char *format, ...)
 
 				while (i < 4)
 				{
-					if (format[j] == *(tableau_selection[i].specifierCharacter))
+					if (format[j + 1] == tableau_selection[i].specifierCharacter[0])
 					{
-						tableau_selection[i].f(prints_type);
+						count_length += tableau_selection[i].f(prints_type);
+						j+=2;
 					}
 					i++;
 				}
+				count_length += _putchar(format[j]);
+				j++;
 			}
+		}
 		else
 		{
-			_putchar(format[j]);
+			count_length += _putchar(format[j]);
+			j++;
 		}
-
-		j++;
 	}
 
 	va_end(prints_type);
-	_putchar("\n");
+
+	return (count_length);
 
 }
