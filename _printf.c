@@ -22,8 +22,7 @@ int _printf(const char *format, ...)
 	int count_length = 0;
 
 
-	displayCharacter_t tableau_selection[] =
-	{
+	displayCharacter_t tableau_selection[] = {
 		{"s", print_funct_string},
 		{"c", print_funct_char},
 		{"d", print_funct_int},
@@ -42,7 +41,7 @@ int _printf(const char *format, ...)
 			if (format[j + 1] == '%')
 			{
 				count_length += _putchar(format[j]);
-				j+=2;
+				j += 2;
 			}
 			else
 			{
@@ -53,7 +52,7 @@ int _printf(const char *format, ...)
 					if (format[j + 1] == tableau_selection[i].specifierCharacter[0])
 					{
 						count_length += tableau_selection[i].f(prints_type);
-						j+=2;
+						j += 2;
 					}
 					i++;
 				}
