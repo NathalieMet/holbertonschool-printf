@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
-		{count_length += _putchar(format[j]);
+		{ count_length += _putchar(format[j]);
 			j++; }
 	}
 	va_end(prints_type);
