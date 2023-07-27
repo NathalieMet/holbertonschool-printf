@@ -30,6 +30,10 @@ int _printf(const char *format, ...)
 			if (format[j + 1] == '%')
 			{   count_length += _putchar(format[j + 1]);
 				j += 2; }
+			else if (format[j + 1] == '\0')
+			{
+				return (-1);
+			}
 			else
 			{ i = 0;
 				while (i < 4)
@@ -40,15 +44,19 @@ int _printf(const char *format, ...)
 						break; }
 					i++;
 				}
-				/*if (selection[i].specifierCharacter == NULL && format[j + 1])*/
-				if (format[j] != '\0' && format[j] != '%')
-				{count_length += _putchar(format[j]);}
-				j++;
+
+				if (i == 4)
+				{
+					count_length += _putchar('%');
+					j++;
+				}
+
 			}
 		}
 		else
 		{ count_length += _putchar(format[j]);
-			j++; }
+			j++;
+		}
 	}
 	va_end(prints_type);
 	return (count_length); }

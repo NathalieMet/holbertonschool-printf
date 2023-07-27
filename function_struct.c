@@ -66,12 +66,12 @@ int print_funct_int(va_list prints_type)
 	int count = 0;
 
 	if (num == INT_MIN)
-		return (write(1, "-2147483648", 12));
+		return (write(1, "-2147483648", 11));
 	if (num == 0)
 		count += _putchar('0');
 	if (num < 0)
 	{
-		num = -(num);
+		num = -num;
 		_putchar ('-');
 		count++;
 	}
