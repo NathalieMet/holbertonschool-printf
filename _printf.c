@@ -23,12 +23,9 @@ int _printf(const char *format, ...)
 	displayCharacter_t tableau_selection[] = {
 		{"s", print_funct_string}, {"c", print_funct_char},
 	{"d", print_funct_int}, {"i", print_funct_int}};
-
 	va_start(prints_type, format);
-
 	if (format == NULL)
 		return (-1);
-
 	while (format != NULL && format[j] != '\0')
 	{
 		if (format[j] == '%')
@@ -36,27 +33,24 @@ int _printf(const char *format, ...)
 			if (format[j + 1] == '%')
 			{	count_length += _putchar(format[j + 1]);
 				j += 2; }
-				else if (format[j + 1] == '\0')
-				{	return (count_length); }
 			else
 			{ i = 0;
 				while (i < 4)
 				{
 					if (format[j + 1] == tableau_selection[i].specifierCharacter[0])
 					{ count_length += tableau_selection[i].f(prints_type);
-						j += 2; }
+						j += 2;
+						break; }
 					i++;
 				}
-				count_length += _putchar(format[j]);
-				j++;
+				if (format[j] != '\0' && format[j] != '%')
+				{count_length += _putchar(format[j]);
+				j++; }
 			}
 		}
 		else
-		{
-			count_length += _putchar(format[j]);
-			j++;
-		}
+		{count_length += _putchar(format[j]);
+			j++; }
 	}
 	va_end(prints_type);
-	return (count_length);
-}
+	return (count_length); }
