@@ -36,6 +36,8 @@ int _printf(const char *format, ...)
 			if (format[j + 1] == '%')
 			{	count_length += _putchar(format[j + 1]);
 				j += 2; }
+				else if (format[j + 1] == '\0')
+				{	return (count_length); }
 			else
 			{ i = 0;
 				while (i < 4)
