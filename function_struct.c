@@ -83,6 +83,5 @@ int print_funct_int(va_list prints_type)
 		count += _putchar(store[i - 1] + '0');
 		i--;
 	}
-	count += _putchar('\0');
 	return (count);
 }
