@@ -1,4 +1,6 @@
 #include <stdarg.h>
+#include <limits.h>
+#include <unistd.h>
 #include "main.h"
 
 /**
@@ -63,6 +65,8 @@ int print_funct_int(va_list prints_type)
 	char store[10];
 	int count = 0;
 
+	if (num == INT_MIN)
+		return (write(1, "-2147483648", 12));
 	if (num == 0)
 		count += _putchar('0');
 	if (num < 0)
@@ -83,5 +87,6 @@ int print_funct_int(va_list prints_type)
 		count += _putchar(store[i - 1] + '0');
 		i--;
 	}
+
 	return (count);
 }

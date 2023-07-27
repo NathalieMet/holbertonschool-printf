@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
+#include <limits.h>
+#include <unistd.h>
 /**
  * struct displayCharacter - struct for display specifier character
  *
