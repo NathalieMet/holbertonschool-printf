@@ -60,30 +60,29 @@ int print_funct_int(va_list prints_type)
 {
 	int num = va_arg(prints_type, int);
 	int i = 0;
-	char tableau_store[10];
+	char store[10];
 	int count = 0;
 
 	if (num == 0)
-		_putchar('0');
+		count += _putchar('0');
 	if (num < 0)
 	{
 		num = -(num);
 		_putchar ('-');
+		count++;
 	}
 
-	while (num > 0)
+	while (num != 0)
 	{
-		tableau_store[i] = num % 10;
+		store[i] = num % 10;
 		num /= 10;
 		i++;
 	}
 	while (i > 0)
 	{
-		_putchar(tableau_store[i - 1] + '0');
+		count += _putchar(store[i - 1] + '0');
 		i--;
-		count++;
-
-
 	}
+	count += _putchar('\0');
 	return (count);
 }
