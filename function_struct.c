@@ -18,7 +18,7 @@ int print_funct_string(va_list prints_type)
 	int count = 0;
 
 	if (str == 0)
-		return (0);
+		str = "(null)";
 
 	while (*str != '\0')
 	{

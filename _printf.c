@@ -46,8 +46,8 @@ int _printf(const char *format, ...)
 					i++;
 				}
 				if (format[j] != '\0' && format[j] != '%')
-				{count_length += _putchar(format[j]);
-				j++; }
+				{count_length += _putchar(format[j]); }
+				j++;
 			}
 		}
 		else
