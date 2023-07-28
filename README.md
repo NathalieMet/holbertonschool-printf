@@ -203,7 +203,7 @@ print_string,
 print_char,
 ![image](https://zupimages.net/up/23/30/46pm.jpg)
 and print_int files ;
-![image](https://zupimages.net/up/23/30/y3ox.jpg)
+![image](https://zupimages.net/up/23/30/ph1j.jpg)
 
 ## Auteurs
 
