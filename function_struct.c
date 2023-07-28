@@ -4,14 +4,14 @@
 #include "main.h"
 
 /**
- * print_funct_string - prints string
+ * print_string - prints string
  * @prints_type: The string to print
  *
  * Return: number of characters printed
  * On error, 0 is returned
  */
 
-int print_funct_string(va_list prints_type)
+int print_string(va_list prints_type)
 
 {
 	char *str = va_arg(prints_type, char*);
@@ -32,14 +32,14 @@ int print_funct_string(va_list prints_type)
 }
 
 /**
- * print_funct_char - prints character
+ * print_char - prints character
  * @prints_type: The character to print
  *
  * Return: number of characters printed
  * On error, 0 is returned
  */
 
-int print_funct_char (va_list prints_type)
+int print_char (va_list prints_type)
 {
 
 	char c = va_arg(prints_type, int);
@@ -51,14 +51,14 @@ int print_funct_char (va_list prints_type)
 }
 
 /**
- * print_funct_int - prints integer
+ * print_int - prints integer
  * @prints_type: The character to print
  *
  * Return: number of digits printed
  * On error, 0 is returned
  */
 
-int print_funct_int(va_list prints_type)
+int print_int(va_list prints_type)
 {
 	int num = va_arg(prints_type, int);
 	int i = 0;

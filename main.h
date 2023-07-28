@@ -21,9 +21,9 @@ typedef struct displayCharacter
 
 
 int _printf(const char *format, ...);
-int print_funct_string(va_list prints_type);
-int print_funct_char(va_list prints_type);
-int print_funct_int(va_list arg);
+int print_string(va_list prints_type);
+int print_char(va_list prints_type);
+int print_int(va_list arg);
 int _putchar(char c);
 
 #endif /* MAIN_H */

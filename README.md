@@ -79,15 +79,15 @@ Uses write to display a character.
 
 ```
 
-print_funct_string
+print_string
 ```c
-int print_funct_string(va_list prints_type);
+int print_string(va_list prints_type);
 {
 	char *str = va_arg(prints_type, char*);
 	int count = 0;
 
 	if (str == 0)
-		return (0);
+		str = "(null)";
 
 	while (*str != '\0')
 	{
@@ -104,37 +104,38 @@ int print_funct_string(va_list prints_type);
 Display a character string from the ASCII table and return the number of characters.
 
 ```
-print_funct_int
+print_int
 ```c
-int print_funct_int(va_list prints_type)
+int print_int(va_list prints_type)
 {
 	int num = va_arg(prints_type, int);
 	int i = 0;
-	char tableau_store[10];
+	char store[10];
 	int count = 0;
 
+	if (num == INT_MIN)
+		return (write(1, "-2147483648", 11));
 	if (num == 0)
-		_putchar('0');
+		count += _putchar('0');
 	if (num < 0)
 	{
-		num = -(num);
+		num = -num;
 		_putchar ('-');
+		count++;
 	}
 
-	while (num > 0)//43
+	while (num != 0)
 	{
-		tableau_store[i] = num % 10;
+		store[i] = num % 10;
 		num /= 10;
 		i++;
 	}
 	while (i > 0)
 	{
-		_putchar(tableau_store[i - 1] + '0');
+		count += _putchar(store[i - 1] + '0');
 		i--;
-		count++;
-
-
 	}
+
 	return (count);
 }
 
@@ -142,9 +143,9 @@ int print_funct_int(va_list prints_type)
 Render a digital value as an ASCII table character and return the number of digits.
 
 ```
-print_funct_char
+print_char
 ```c
-int print_funct_char (va_list prints_type)
+int print_char (va_list prints_type)
 {
 
 	char c = va_arg(prints_type, int);
@@ -175,9 +176,9 @@ typedef struct displayCharacter
 
 
 int _printf(const char *format, ...);
-int print_funct_string(va_list prints_type);
-int print_funct_char(va_list prints_type);
-int print_funct_int(va_list arg);
+int print_string(va_list prints_type);
+int print_char(va_list prints_type);
+int print_int(va_list arg);
 int _putchar(char c);
 
 #endif /* MAIN_H */

@@ -18,8 +18,8 @@ int _printf(const char *format, ...)
 	int j = 0;
 	int count_length = 0;
 	displayCharacter_t selection[] = {
-		{"s", print_funct_string}, {"c", print_funct_char},
-	{"d", print_funct_int}, {"i", print_funct_int}};
+		{"s", print_string}, {"c", print_char},
+	{"d", print_int}, {"i", print_int}};
 	va_start(prints_type, format);
 	if (format == NULL)
 		return (-1);
