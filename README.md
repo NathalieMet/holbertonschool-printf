@@ -201,7 +201,7 @@ To view the flowchar, consult the flowchar_printf
 print_string,
 ![image](https://zupimages.net/up/23/30/9vy5.jpg)
 print_char,
-![image](https://zupimages.net/up/23/30/46pm.jpg)
+![image](https://zupimages.net/up/23/30/k6at.jpg)
 and print_int files ;
 ![image](https://zupimages.net/up/23/30/ph1j.jpg)
 
