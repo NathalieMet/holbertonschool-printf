@@ -180,9 +180,14 @@ $ gcc *.c
 
 ## Flowchar
 
-Pour consulter les flowchar consulter les fichiers print_string,
-print_char print_int, flowchar_printf;
-
+To view the flowchar, consult the flowchar_printf
+![image](https://zupimages.net/viewer.php?id=23/30/petl.jpg)
+print_string,
+![image](https://zupimages.net/viewer.php?id=23/30/9vy5.jpg)
+print_char,
+![image](https://zupimages.net/viewer.php?id=23/30/46pm.jpg)
+and print_int files ;
+![image](https://zupimages.net/viewer.php?id=23/30/9vy5.jpg)
 
 ## Auteurs
 
