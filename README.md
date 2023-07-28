@@ -16,6 +16,22 @@ _printf("My name is %s and I am %d years old", "Benny hill", 123)
 
 The _printf() function takes two arguments: a character pointer to a string: format, and a "list of variable arguments": arg_list. _printf() scans the format string for a conversion specifier, indicated by the "%" symbol. If found, the match_specifier() function scans an array of structures (containing pairs of characters and functions) to find the specifier function that matches the conversion specifier given in the format string, then returns a pointer to this matched function. printf() uses the pointer to this specifier function to call the specifier function on the next queued argument in the arg_list. Each specifier function writes one character at a time according to the value of arg_list.
 
+## Flag characters
+
+The character % is followed by one of the next specific characters.
+
+%c
+- Display a character.
+
+%s
+- Display a string of characters.
+
+%d
+- Display a integer of type int in base 10. %d Specifies signed decimal integer.
+
+%i
+- Display a integer, same as %d. %i Specifies an integer
+
 ## Standard functions and Macros
 
 To operate the _printf function, we use different functions:
