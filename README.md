@@ -197,15 +197,19 @@ $ gcc *.c
 ## Flowchar
 
 flowchar_printf
+
 ![image](https://zupimages.net/up/23/30/ii6d.jpg)
 
 print_string
+
 ![image](https://zupimages.net/up/23/30/9vy5.jpg)
 
 print_char
+
 ![image](https://zupimages.net/up/23/30/k6at.jpg)
 
 print_int files
+
 ![image](https://zupimages.net/up/23/30/ph1j.jpg)
 
 ## Auteurs
