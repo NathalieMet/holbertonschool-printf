@@ -196,13 +196,16 @@ $ gcc *.c
 
 ## Flowchar
 
-To view the flowchar, consult the flowchar_printf
+flowchar_printf
 ![image](https://zupimages.net/up/23/30/ii6d.jpg)
-print_string,
+
+print_string
 ![image](https://zupimages.net/up/23/30/9vy5.jpg)
-print_char,
+
+print_char
 ![image](https://zupimages.net/up/23/30/k6at.jpg)
-and print_int files ;
+
+print_int files
 ![image](https://zupimages.net/up/23/30/ph1j.jpg)
 
 ## Auteurs
